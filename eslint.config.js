@@ -41,15 +41,12 @@ export default tseslint.config(
             },
         },
         rules: {
-            indent: ['error', 4, { SwitchCase: 1 }],
-            'linebreak-style': ['error', 'unix'],
-            quotes: ['error', 'single', { avoidEscape: true }],
-            semi: ['error', 'always'],
+            // 格式化类规则（indent/semi/quotes/linebreak 等）统一交给 Prettier，
+            // 由下面的 prettier/prettier 规则在 ESLint 中强制执行，此处不再重复配置，避免互相打架。
             'prettier/prettier': 'error',
             '@typescript-eslint/no-var-requires': 'off',
             'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx', '.tsx'] }],
             'react/jsx-no-literals': 'off',
-            'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
             'react-hooks/exhaustive-deps': 'off',
             'react/jsx-no-bind': [1, { allowArrowFunctions: true, allowFunctions: true, allowBind: true }],
             'react/function-component-definition': [
